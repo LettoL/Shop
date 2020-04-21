@@ -2,14 +2,14 @@
 
 open System
 
-type Product = {
+type SoldProduct = {
     ProductId: int
     Amount: int
     Cost: decimal
 }
 
 type CreatedSale = {
-    Products: Product list
+    Products: SoldProduct list
     Date: DateTime
     Sum: decimal
 }
