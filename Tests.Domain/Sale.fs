@@ -5,7 +5,7 @@ open Domain.Sale
 open FsCheck.Xunit
   
 [<Property>]
-let ``Sum cost of products equals sum of sale`` (products: list<SoldProduct>) =
+let ``Sum cost of products equals sum of sale`` (products: list<SoldProduct>, moneys: list<DepositedMoney>) =
   products
   |> List.map(fun x -> x.Cost * (decimal x.Amount))
-  |> List.sum = (createSale products DateTime.Now).Sum
+  |> List.sum = (createSale products DateTime.Now moneys).Sum
