@@ -17,18 +17,25 @@ type DepositedMoney = {
 type CreatedSale = {
     Products: SoldProduct list
     Date: DateTime
-    Sum: decimal
+    CostProducts: decimal
     DepositedMoneys: DepositedMoney list
 }
 
-let createSale products date moneys =
-        
-    let createdSale = {
-        Products = products
-        Date = date
-        Sum = products
-               |> List.map(fun x -> (decimal x.Amount) * x.Cost)
-               |> List.sum
-        DepositedMoneys = moneys
-    }
-    createdSale
+let calculationCostProducts = List.sumBy(fun x -> (decimal x.Amount) * x.Cost)
+let calculationDepositedSum = List.sumBy(fun x -> x.Sum)
+
+let createSale date products moneys =
+ 
+    let costProducts = products |> calculationCostProducts
+    let depositedSum = moneys |> calculationDepositedSum
+    
+    if costProducts <> depositedSum then
+      Error "Deposited sum is not equal to total cost of products"
+    else
+        let createdSale = {
+            Products = products
+            Date = date
+            CostProducts = costProducts
+            DepositedMoneys = moneys
+        }
+        Ok createdSale
