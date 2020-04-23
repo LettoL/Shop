@@ -21,6 +21,9 @@ type CreatedSale = {
     DepositedMoneys: DepositedMoney list
 }
 
+type SaleCreateError =
+    | DepositedSumNotEqualCostProducts
+
 let calculationCostProducts = List.sumBy(fun x -> (decimal x.Amount) * x.Cost)
 let calculationDepositedSum = List.sumBy(fun x -> x.Sum)
 
@@ -30,7 +33,7 @@ let createSale date products moneys =
     let depositedSum = moneys |> calculationDepositedSum
     
     if costProducts <> depositedSum then
-      Error "Deposited sum is not equal to total cost of products"
+      Error DepositedSumNotEqualCostProducts
     else
         let createdSale = {
             Products = products
