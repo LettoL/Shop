@@ -6,6 +6,10 @@ Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Tests.Domain", "Tests.Domai
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "Application", "Application\Application.fsproj", "{28F11E88-AB7F-4C86-B0A1-EAC02C4DEAE0}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{27FDF9B1-C038-45A7-A2F0-541BE4B20A69}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "InMemoryData", "InMemoryData\InMemoryData.fsproj", "{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,12 @@ Global
 		{28F11E88-AB7F-4C86-B0A1-EAC02C4DEAE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28F11E88-AB7F-4C86-B0A1-EAC02C4DEAE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28F11E88-AB7F-4C86-B0A1-EAC02C4DEAE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{42FEC1AB-1D03-42B6-9A49-D7DDB66D73A6} = {27FDF9B1-C038-45A7-A2F0-541BE4B20A69}
 	EndGlobalSection
 EndGlobal
