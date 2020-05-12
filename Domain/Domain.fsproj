@@ -5,6 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <Compile Include="Product.fs" />
         <Compile Include="Sale.fs" />
         <Compile Include="Supply.fs" />
     </ItemGroup>
