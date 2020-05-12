@@ -9,4 +9,8 @@
         <Compile Include="ProductData.fs" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Domain\Domain.fsproj" />
+    </ItemGroup>
+
 </Project>

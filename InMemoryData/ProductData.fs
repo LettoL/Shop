@@ -1,26 +1,21 @@
 ﻿module InMemoryData.ProductData
 
-open System
 open System.Collections
+open Domain.Product
 
-type ShippedProduct = {
-  Id: int
-  Date: DateTime
-  ProductId: int
-  Amount: int
-}
+
 
 type Query = All
   
-type Command = Create of ShippedProduct * Hashtable
+type Command = Create of ShippedProduct
 
 let data = Hashtable()
 
 let commandsHandler command =
   match command with
-  | Create (event, data) ->
-    data.Add(event.Id, event)
-    event.Id
+  | Create event ->
+    data.Add(event.Date.ToString(), event)
+    event
     
 let queriesHandler query =
   match query with

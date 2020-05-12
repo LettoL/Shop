@@ -1,22 +1,19 @@
 ﻿module InMemoryData.SaleData
 
 open System.Collections
-
-type Sale = {
-  Id: int
-}
+open Domain.Sale
 
 type Query =
   | All
   
 type Command =
-  | Create of Sale * Hashtable
+  | Create of Sale
 
 let data = Hashtable()
 
 let commandsHandler command =
   match command with
-  | Create (sale, data) ->
+  | Create sale ->
     data.Add(sale.Id, sale)
     sale.Id
   
