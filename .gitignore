@@ -4,3 +4,6 @@ obj/
 .idea
 .ionide
 *.DotSettings.user
+.vs/Shop/v16/.suo
+
+.vs/Shop/DesignTimeBuild/.dtbcache
