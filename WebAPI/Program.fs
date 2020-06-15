@@ -6,8 +6,8 @@ open Startup
 [<EntryPoint>]
 let main _ =
     Host.CreateDefaultBuilder()
-      .ConfigureWebHostDefaults(fun webHostBuiler ->
-        webHostBuiler
+      .ConfigureWebHostDefaults(fun webHostBuilder ->
+        webHostBuilder
           .Configure(configureApp)
           .ConfigureServices(configureServices)
           |> ignore)
